@@ -1,0 +1,6 @@
+implement Computation<Path>
+
+has input String
+
+method Compute() returns Path
+  throw InvalidFormat(input)

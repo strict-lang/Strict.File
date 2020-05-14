@@ -1,0 +1,7 @@
+implement Item
+
+method List() returns Item[]
+
+method Lookup(name String) returns Item?
+
+method Contains(name String)

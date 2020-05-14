@@ -1,0 +1,1 @@
+# Strict.File - Strict FileSystem package

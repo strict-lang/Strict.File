@@ -1,0 +1,9 @@
+method Delete()
+
+method Create()
+
+method Exists() returns Boolean
+
+method Path() returns Path
+
+method Parent() returns Directory?

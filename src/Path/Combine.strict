@@ -1,0 +1,32 @@
+implement Computation<Path>
+
+has first Any
+has remaining Any[]
+
+factory (first Any, remaining Any[])
+  return new(first: first, remaining: remaining)
+
+method Compute() returns Path
+  if parts.Count() is 1
+    return computeWithSinglePart()
+  return buildPath(first, 0)
+
+method computeWithSinglePart()
+  if first is Path
+    return first
+  if first is String
+    return Path.Parse(first)
+  throw Validation.InvalidArgument(first)
+
+method buildPath(identity Path, index Number) returns Path
+  if parts.ContainsIndex(index)
+    let combined = combine(identity, remaining[index])
+    return buildPath(combined, index + 1)
+  return identity
+    
+method combine(identity Path, part Any) returns Path
+  if part is Path 
+    return identity.Append(part)
+  if part is String
+    return identity.CreateChild(part)
+  throw Validation.InvalidArgument(part)

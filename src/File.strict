@@ -1,0 +1,9 @@
+implement Item
+
+method Write(contents Byte[])
+
+method Append(contents Byte[])
+
+method Read() returns Byte[]
+
+method Name() returns Name

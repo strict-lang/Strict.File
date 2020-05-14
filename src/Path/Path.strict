@@ -1,0 +1,5 @@
+method Lookup() returns Item?
+
+method CreateChild(name String) returns Path
+
+method Append(path Path) returns Path
